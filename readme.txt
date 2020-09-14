@@ -7,3 +7,5 @@ How to run:
 Run launcher.bat 
 or
 Type "py "Click game.py"" in CMD
+or
+Just run it in your compiler lul
