@@ -1,1 +1,0 @@
-py "Click game.py"
