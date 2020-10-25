@@ -1,13 +1,24 @@
 """"Written by NotSelwyn (https://github.com/NotSelwyn)"""
 
-import datetime
-import random
-import time
-import os
-import pygame
-
 
 def main():
+    import sys
+    import subprocess
+    import random
+    import time
+    import os
+
+    try:
+        import pygame
+    except ModuleNotFoundError:
+        subprocess.check_call([sys.executable, "pip", "install", "pygame"])
+        import pygame
+    try:
+        import datetime
+    except ModuleNotFoundError:
+        subprocess.check_call([sys.executable, "pip", "install", "datetime"])
+        import datetime
+
     pygame.init()
     clock = pygame.time.Clock()
     size = [512, 612]
@@ -130,13 +141,13 @@ def main():
             playRect = play.get_rect()
             playRect.center = (size[0] // 2, size[1] // 2)
 
-            #settings = pygame.transform.scale(settings, (64, 64))
-            #settingsRect = settings.get_rect()
-            #settingsRect.center = (42, 42)
+            # settings = pygame.transform.scale(settings, (64, 64))
+            # settingsRect = settings.get_rect()
+            # settingsRect.center = (42, 42)
 
             screen.blit(play, playRect)
             screen.blit(start_text, startRect)
-            #screen.blit(settings, settingsRect)
+            # screen.blit(settings, settingsRect)
 
             screen.blit(font_func(20).render(f'HIGHSCORES', True, [0, 0, 0], [255, 255, 255]),
                         [size[0] - highscore_rect.get_width() + 10, (size[1] - highscore_rect.get_height()) // 2 - 20])
@@ -147,7 +158,7 @@ def main():
                 if i == 4:
                     break
 
-            #if settings_bool:
+            # if settings_bool:
             #    if settings_opening is True and settings_done is False:
             #        limit = 10
             #        z += 1
@@ -192,7 +203,7 @@ def main():
                             if str(square) not in squares:
                                 squares.append(square)
 
-                    #elif settingsRect.collidepoint(mouse_pos[0], mouse_pos[1]):
+                    # elif settingsRect.collidepoint(mouse_pos[0], mouse_pos[1]):
                     #    settings_bool = True
                     #    settings_done = False
 
