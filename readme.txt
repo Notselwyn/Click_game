@@ -10,3 +10,9 @@ How to run:
 Run launcher.bat 
 or
 Type "py "Click game.py"" in CMD
+
+
+
+
+## Disclaimer
+Everything in this repo was made with 4 months experience
